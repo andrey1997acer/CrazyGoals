@@ -22,6 +22,8 @@ public class ControladorCarros : MonoBehaviour
     public bool powerUp1 = false;
     public bool powerUp2 = false;
     private bool powerUp3 = false;
+
+    public bool volcado = false;
     
 
     private Rigidbody rb;
@@ -181,8 +183,7 @@ public class ControladorCarros : MonoBehaviour
         if (other.tag == "Piso")
         {
             Debug.Log("He obtenido el " + other.name);
-             //Destroy(this.gameObject, (float)5);
-           // Instantiate(objetoCarro);
+            volcado = true;
            
             
         }
