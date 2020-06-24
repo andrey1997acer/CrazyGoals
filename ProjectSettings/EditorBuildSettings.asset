@@ -17,10 +17,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/celebracionPlayer1.unity
     guid: f0a789f1ba76f0242adf5d92fc9edc3f
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/ecena2.unity
-    guid: 8ae00026e9477354ea2c7caf7b9d88d7
+    guid: e0d0ad8dca9ba054e9a5480193948a56
   - enabled: 1
     path: Assets/Scenes/ecena3.unity
-    guid: a99c13eae45c9354e8316e5b8b19e1fb
+    guid: ca3495ef1f0d42b44b83ae5bd57d461b
   m_configObjects: {}
