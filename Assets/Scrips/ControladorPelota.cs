@@ -16,6 +16,7 @@ public class ControladorPelota : MonoBehaviour
         if(other.tag == "Malla1"){
             
             GameObject.Find(j1.name).GetComponent<ControladorCarros>().goles += 1;
+            
         }
         if(other.tag == "Malla2"){
             GameObject.Find(j2.name).GetComponent<ControladorCarros>().goles += 1;
