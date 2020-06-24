@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1701,7 +1701,7 @@ MonoBehaviour:
   lbl_poderj1: {fileID: 1223842549}
   lbl_poderj2: {fileID: 718153722}
   lbl_tiempo: {fileID: 905781229}
-  intervalo: 5
+  intervalo: 30
   keys: 1b000000
   pauseMenu: {fileID: 2043072762}
   pauseGame: 0
@@ -3102,7 +3102,7 @@ PrefabInstance:
     - target: {fileID: 5586568573255184195, guid: d5a9701465a82da4cb30a205801442af,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.32
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 5586568573255184195, guid: d5a9701465a82da4cb30a205801442af,
         type: 3}
