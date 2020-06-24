@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 public class GameGUI : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    
     public Text lbl_goalj1;
     public Text lbl_goalj2;
     public Text lbl_tiempo;
@@ -18,20 +19,24 @@ public class GameGUI : MonoBehaviour
     public bool pauseGame = false;
     public Text lbl_gameover;
 
-
+   
+private Rigidbody rb;
 
 
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         setMarcador();
         startCountDown();
         pause();
+       
     }
 
     void Update()
     {
         setMarcador();
         lbl_tiempo.text = intervalo.ToString();
+
 
 
         if (Input.GetKeyDown(keys[0])) //Pausa
@@ -76,6 +81,17 @@ public class GameGUI : MonoBehaviour
     {
         int j1 = GameObject.Find("jeep1").GetComponent<ControladorCarros>().goles;
         int j2 = GameObject.Find("jeep2").GetComponent<ControladorCarros>().goles;
+
+        if(lbl_goalj1.text != j1.ToString()){
+         GameObject.Find("jeep1").transform.position = new Vector3(0f,0.37f,0.99f);
+             GameObject.Find("jeep2").transform.position = new Vector3(0f,0.37f,0.12f);
+           
+        }
+        if(lbl_goalj2.text != j2.ToString()){
+            GameObject.Find("jeep1").transform.position = new Vector3(0f,0.37f,0.99f);
+             GameObject.Find("jeep2").transform.position = new Vector3(0f,0.37f,0.12f);
+        }
+
         lbl_goalj1.text = j1.ToString();
         lbl_goalj2.text = j2.ToString();
     }
@@ -113,8 +129,13 @@ public class GameGUI : MonoBehaviour
 
     public void loadGame()
     {
-        GameObject.Find("jeep1").GetComponent<ControladorCarros>().goles = 0;
+            GameObject.Find("jeep1").GetComponent<ControladorCarros>().goles = 0;
             GameObject.Find("jeep2").GetComponent<ControladorCarros>().goles = 0;
+            SceneManager.LoadScene("ecena1");
+    }
+
+    public void loadGameAfterGool()
+    {
         SceneManager.LoadScene("ecena1");
     }
 

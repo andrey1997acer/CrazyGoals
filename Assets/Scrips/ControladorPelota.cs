@@ -7,20 +7,28 @@ using UnityEngine.SceneManagement;
 public class ControladorPelota : MonoBehaviour
 {
     // Start is called before the first frame update
-   
+
     public GameObject j1;
     public GameObject j2;
+    private int golj1 = 0;
+    private int golj2 = 0;
+    
 
-    void OnTriggerEnter(Collider other){
+    void OnTriggerEnter(Collider other)
+    {
 
-        if(other.tag == "Malla1"){
-            
+        if (other.tag == "Malla1")
+        {
+           
             GameObject.Find(j1.name).GetComponent<ControladorCarros>().goles += 1;
             
         }
-        if(other.tag == "Malla2"){
-            GameObject.Find(j2.name).GetComponent<ControladorCarros>().goles += 1;
-            
+        if (other.tag == "Malla2")
+        {
+              GameObject.Find(j2.name).GetComponent<ControladorCarros>().goles += 1;
+              
         }
     }
+
+
 }
