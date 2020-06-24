@@ -24,7 +24,8 @@ public class GameGUI : MonoBehaviour
 
 
     private Rigidbody rb;
-
+    static AudioSource sound;
+    public List<AudioClip> audios = new List<AudioClip>();
 
     void Start()
     {
@@ -35,6 +36,10 @@ public class GameGUI : MonoBehaviour
         lbl_poderj1.enabled = false;
         lbl_poderj2.enabled = false;
         lbl_gameover.enabled = false;
+        sound = GetComponent<AudioSource>();
+
+        sound.clip = audios[0];
+        sound.Play();
 
     }
 
@@ -107,6 +112,10 @@ public class GameGUI : MonoBehaviour
             {
                 lbl_gameover.enabled = true;
                 lbl_gameover.text = "¡JUGADOR 1 GANA!";
+                
+                 sound.clip = audios[1];
+                 sound.Play();
+                 
                 gameOver();
 
             }
@@ -114,12 +123,17 @@ public class GameGUI : MonoBehaviour
             {
                 lbl_gameover.enabled = true;
                 lbl_gameover.text = "¡JUGADOR 2 GANA!";
+                
+                 sound.clip = audios[1];
+                 sound.Play();
+                 
                 gameOver();
             }
             else
             {
                 lbl_gameover.enabled = true;
                 lbl_gameover.text = "EMPATE";
+                
                 gameOver();
             }
 
