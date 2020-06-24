@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameGUI : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    public string escena;
     public Text lbl_goalj1;
     public Text lbl_goalj2;
 
@@ -112,9 +112,7 @@ public class GameGUI : MonoBehaviour
             {
                 lbl_gameover.enabled = true;
                 lbl_gameover.text = "¡JUGADOR 1 GANA!";
-                
-               
-                 
+                loadGanador1();
                 gameOver();
 
             }
@@ -122,6 +120,7 @@ public class GameGUI : MonoBehaviour
             {
                 lbl_gameover.enabled = true;
                 lbl_gameover.text = "¡JUGADOR 2 GANA!";
+                loadGanador2();
                 
                  
                 gameOver();
@@ -191,13 +190,23 @@ public class GameGUI : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
+    public void loadGanador1()
+    {
+        SceneManager.LoadScene("celebracionPlayer1");
+    }
+
+    public void loadGanador2()
+    {
+        SceneManager.LoadScene("celebracionPlayer2");
+    }
     public void loadGame()
     {
         GameObject.Find("jeep1").GetComponent<ControladorCarros>().goles = 0;
         GameObject.Find("jeep2").GetComponent<ControladorCarros>().goles = 0;
-        SceneManager.LoadScene("ecena1");
+        SceneManager.LoadScene(escena);
     }
 
+    
 
 
     public void gameOver()
