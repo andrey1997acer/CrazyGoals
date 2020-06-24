@@ -83,13 +83,13 @@ private Rigidbody rb;
         int j2 = GameObject.Find("jeep2").GetComponent<ControladorCarros>().goles;
 
         if(lbl_goalj1.text != j1.ToString()){
-         GameObject.Find("jeep1").transform.position = new Vector3(0f,0.37f,0.99f);
-             GameObject.Find("jeep2").transform.position = new Vector3(0f,0.37f,0.12f);
+         GameObject.Find("jeep2").transform.position = new Vector3(-3.62f,0.37f,0.32f);
+             GameObject.Find("jeep1").transform.position = new Vector3(3.62f,0.37f,0.32f);
            
         }
         if(lbl_goalj2.text != j2.ToString()){
-            GameObject.Find("jeep1").transform.position = new Vector3(0f,0.37f,0.99f);
-             GameObject.Find("jeep2").transform.position = new Vector3(0f,0.37f,0.12f);
+            GameObject.Find("jeep2").transform.position = new Vector3(-3.62f,0.37f,0.32f);
+             GameObject.Find("jeep1").transform.position = new Vector3(3.62f,0.37f,0.32f);
         }
 
         lbl_goalj1.text = j1.ToString();
