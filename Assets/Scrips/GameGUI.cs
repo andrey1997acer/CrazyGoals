@@ -113,8 +113,7 @@ public class GameGUI : MonoBehaviour
                 lbl_gameover.enabled = true;
                 lbl_gameover.text = "¡JUGADOR 1 GANA!";
                 
-                 sound.clip = audios[1];
-                 sound.Play();
+               
                  
                 gameOver();
 
@@ -124,8 +123,6 @@ public class GameGUI : MonoBehaviour
                 lbl_gameover.enabled = true;
                 lbl_gameover.text = "¡JUGADOR 2 GANA!";
                 
-                 sound.clip = audios[1];
-                 sound.Play();
                  
                 gameOver();
             }

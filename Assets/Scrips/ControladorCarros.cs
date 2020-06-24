@@ -24,6 +24,8 @@ public class ControladorCarros : MonoBehaviour
     private bool powerUp3 = false;
 
     public bool volcado = false;
+
+    public int signo = 0;
     
 
     private Rigidbody rb;
@@ -63,10 +65,10 @@ public class ControladorCarros : MonoBehaviour
                 {
                     Debug.Log("Multiplicando la fuerza...... ");
                     brakes = 0;
-                    WheelCFR.motorTorque = DirVertical * motorForce * 100;
-                    WheelCFL.motorTorque = DirVertical * motorForce * 100;
-                    WheelCBR.motorTorque = DirVertical * motorForce * 100;
-                    WheelCBL.motorTorque = DirVertical * motorForce * 100;
+                    WheelCFR.motorTorque = DirVertical * motorForce * 100 * signo;
+                    WheelCFL.motorTorque = DirVertical * motorForce * 100 *signo;
+                    WheelCBR.motorTorque = DirVertical * motorForce * 100 *signo;
+                    WheelCBL.motorTorque = DirVertical * motorForce * 100 *signo;
                 }
 
                 WheelCFR.brakeTorque = brakes;
@@ -92,10 +94,10 @@ public class ControladorCarros : MonoBehaviour
             {
                 Debug.Log("Normalizando la fuerza...... ");
                 brakes = 0;
-                WheelCFR.motorTorque = DirVertical * motorForce;
-                WheelCFL.motorTorque = DirVertical * motorForce;
-                WheelCBR.motorTorque = DirVertical * motorForce;
-                WheelCBL.motorTorque = DirVertical * motorForce;
+                WheelCFR.motorTorque = DirVertical * motorForce *signo;
+                WheelCFL.motorTorque = DirVertical * motorForce * signo;
+                WheelCBR.motorTorque = DirVertical * motorForce * signo;
+                WheelCBL.motorTorque = DirVertical * motorForce * signo;
             }
 
             WheelCFR.brakeTorque = brakes;
