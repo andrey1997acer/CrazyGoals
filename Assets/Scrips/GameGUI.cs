@@ -43,45 +43,29 @@ public class GameGUI : MonoBehaviour
         setMarcador();
         lbl_tiempo.text = intervalo.ToString();
 
-
-
-
-
-
-        if (GameObject.Find("jeep1").GetComponent<ControladorCarros>().volcado)
+        if (GameObject.Find("jeep2").transform.rotation.x == -180f || GameObject.Find("jeep2").transform.rotation.y == -180f ||
+        GameObject.Find("jeep2").transform.rotation.x == 90f)
         {
-            GameObject.Find("jeep1").transform.eulerAngles = new Vector3(
-                0f,
-                -90f,
-                0f
-                );
-            GameObject.Find("jeep1").GetComponent<ControladorCarros>().volcado = false;
+            Debug.Log("Se volco Jeep2");
         }
-        if (GameObject.Find("jeep2").GetComponent<ControladorCarros>().volcado)
+
+        if (GameObject.Find("jeep1").transform.rotation.x == -180f || GameObject.Find("jeep1").transform.rotation.y == -180f ||
+        GameObject.Find("jeep1").transform.rotation.x == 90f)
         {
-            GameObject.Find("jeep2").transform.eulerAngles = new Vector3(
-                0f,
-                90f,
-                0f
-                );
-            GameObject.Find("jeep2").GetComponent<ControladorCarros>().volcado = false;
+            Debug.Log("Se volco Jeep1");
         }
 
         if (GameObject.Find("jeep1").GetComponent<ControladorCarros>().powerUp1 || GameObject.Find("jeep1").GetComponent<ControladorCarros>().powerUp2)
         {
             lbl_poderj1.enabled = true;
-        }
-        else
-        {
-            lbl_poderj1.enabled = false;
+        }else{
+             lbl_poderj1.enabled = false;
         }
         if (GameObject.Find("jeep2").GetComponent<ControladorCarros>().powerUp1 || GameObject.Find("jeep2").GetComponent<ControladorCarros>().powerUp2)
         {
             lbl_poderj2.enabled = true;
-        }
-        else
-        {
-            lbl_poderj2.enabled = false;
+        }else{
+             lbl_poderj2.enabled = false;
         }
 
         if (Input.GetKeyDown(keys[0])) //Pausa
@@ -104,7 +88,7 @@ public class GameGUI : MonoBehaviour
 
 
             if (GameObject.Find("jeep1").GetComponent<ControladorCarros>().goles > GameObject.Find("jeep2").GetComponent<ControladorCarros>().goles)
-            {
+            {   
                 lbl_gameover.enabled = true;
                 lbl_gameover.text = "¡JUGADOR 1 GANA!";
                 gameOver();
@@ -112,13 +96,13 @@ public class GameGUI : MonoBehaviour
             }
             else if (GameObject.Find("jeep2").GetComponent<ControladorCarros>().goles > GameObject.Find("jeep1").GetComponent<ControladorCarros>().goles)
             {
-                lbl_gameover.enabled = true;
+                 lbl_gameover.enabled = true;
                 lbl_gameover.text = "¡JUGADOR 2 GANA!";
                 gameOver();
             }
             else
             {
-                lbl_gameover.enabled = true;
+                 lbl_gameover.enabled = true;
                 lbl_gameover.text = "EMPATE";
                 gameOver();
             }
