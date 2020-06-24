@@ -19,8 +19,8 @@ public class ControladorCarros : MonoBehaviour
 
     public List<KeyCode> keys = new List<KeyCode>();
     //public GameObject power;
-    private bool powerUp1 = false;
-    private bool powerUp2 = false;
+    public bool powerUp1 = false;
+    public bool powerUp2 = false;
     private bool powerUp3 = false;
     
 
@@ -154,13 +154,17 @@ public class ControladorCarros : MonoBehaviour
         wheelPositionControl();
         poder();
     }
+
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Item1")
         {
             powerUp1 = true;
             Debug.Log("He obtenido el " + other.name);
+
             Destroy(other.gameObject);
+
         }
         if (other.tag == "Item2")
         {
